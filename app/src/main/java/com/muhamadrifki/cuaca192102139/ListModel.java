@@ -8,6 +8,7 @@ public class ListModel {
     @SerializedName("main")
     private MainModel mainModel;
     @SerializedName("weather")
+    private List<WeatherModel> weatherModelList;
     private String dt_txt;
 
     public ListModel (){}
@@ -28,7 +29,7 @@ public class ListModel {
         this.dt_txt = dt_txt;
     }
 
-    public List<WeatherModel> getWeatherModellist(){return WeatherModelList}
+    public List<WeatherModel> getWeatherModellist(){return weatherModelList;}
 
     public void setWeatherModelList(List<WeatherModel> weatherModelList){
         this.weatherModelList = weatherModelList;

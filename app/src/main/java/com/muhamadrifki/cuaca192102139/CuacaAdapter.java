@@ -35,11 +35,65 @@ public class CuacaAdapter extends RecyclerView.Adapter<CuacaViewHolder> {
 
     @Override
     public void onBindViewHolder(@NonNull CuacaViewHolder holder, int position) {
+        ListModel lm = listModelList.get(position);
+        WeatherModel wm = lm.getWeatherModellist().get(0);
+        MainModel mm = lm.getMainModel();
 
+        String suhu = formatNumber(toCelcius(mm.getTemp_min()),"###.##")+ "°C - " +
+                formatNumber(toCelcius(mm.getTemp_max()),"###.##") + "°C";
+
+        switch (wm.getIcon()){
+            case "o1d":
+                holder.cuacaImageView.setImageResource(R.mipmap.ic_01d);
+                break;
+            case "01n" :
+                holder.cuacaImageView.setImageResource(R.mipmap.ic_01n);
+                break;
+            case "o2d":
+                holder.cuacaImageView.setImageResource(R.mipmap.ic_02d);
+                break;
+            case "02n" :
+                holder.cuacaImageView.setImageResource(R.mipmap.ic_02n);
+                break;
+            case "o3d":
+                holder.cuacaImageView.setImageResource(R.mipmap.ic_03d);
+                break;
+            case "03n" :
+                holder.cuacaImageView.setImageResource(R.mipmap.ic_03n);
+                break;
+            case "o4d":
+                holder.cuacaImageView.setImageResource(R.mipmap.ic_04d);
+                break;
+            case "04n" :
+                holder.cuacaImageView.setImageResource(R.mipmap.ic_04n);
+                break;
+            case "o9d":
+                holder.cuacaImageView.setImageResource(R.mipmap.ic_09d);
+                break;
+            case "09n" :
+                holder.cuacaImageView.setImageResource(R.mipmap.ic_09n);
+                break;
+            case "10d":
+                holder.cuacaImageView.setImageResource(R.mipmap.ic_10d);
+                break;
+            case "10n" :
+                holder.cuacaImageView.setImageResource(R.mipmap.ic_10n);
+                break;
+            case "11d":
+                holder.cuacaImageView.setImageResource(R.mipmap.ic_11d);
+                break;
+            case "11n" :
+                holder.cuacaImageView.setImageResource(R.mipmap.ic_11n);
+                break;
+        }
+        holder.namaTextView.setText(wm.getMain());
+        holder.deskripsiTextView.setText(wm.getDeskripsi());
+        holder.tglWaktuTextView.setText(lm.getDt_txt());
+        holder.suhuTextView.setText(suhu);
     }
 
     @Override
     public int getItemCount() {
-        return 0;
+        return (listModelList != null) ? listModelList.size() : 0;
     }
 }
