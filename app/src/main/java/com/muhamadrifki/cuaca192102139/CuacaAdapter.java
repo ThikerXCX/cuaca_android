@@ -107,7 +107,7 @@ public class CuacaAdapter extends RecyclerView.Adapter<CuacaViewHolder> {
 
     private String formatWib(String tanggalWaktuGmt_string){
 
-        Log.d("*thikerxcx","msg : waktu gmt : " + tanggalWaktuGmt_string);
+        //Log.d("*thikerxcx","msg : waktu gmt : " + tanggalWaktuGmt_string);
 
         Date tanggalWaktuGmt = null ;
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-mm-dd HH:mm:ss");
@@ -125,8 +125,7 @@ public class CuacaAdapter extends RecyclerView.Adapter<CuacaViewHolder> {
         String tanggalWaktuWib_string = sdf.format(tanggalWaktuWib);
         tanggalWaktuWib_string = tanggalWaktuGmt_string.replace("00:00","00 WIB");
 
-        Log.d("*thikerxcx","msg : waktu wib sekarang : " + tanggalWaktuWib_string);
-
+        //Log.d("*thikerxcx","msg : waktu wib sekarang : " + tanggalWaktuWib_string);
 
         return tanggalWaktuWib_string;
     }
