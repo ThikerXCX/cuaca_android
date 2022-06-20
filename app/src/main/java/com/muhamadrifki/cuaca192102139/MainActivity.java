@@ -48,7 +48,7 @@ public class MainActivity extends AppCompatActivity {
         ahc.get(url, new AsyncHttpResponseHandler() {
             @Override
             public void onSuccess(int statusCode, Header[] headers, byte[] responseBody) {
-                Log.e("*192102139",new String(responseBody));
+                //Log.e("*192102139",new String(responseBody));
                 Gson gson = new Gson();
                 RootModel rm = gson.fromJson(new String(responseBody),RootModel.class);
                 //Log.e("*192102139",rm.getListModelList().get(0).getDt_txt());
